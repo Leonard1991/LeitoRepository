@@ -1,0 +1,27 @@
+<!-- <mat-selection-list #tasks>
+    <mat-list-item *ngFor="let task of taskList">
+      {{task.name}}
+    </mat-list-item>
+</mat-selection-list> -->
+
+<!-- 
+<ng-container *ngFor="let task of taskList">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title [class.done]="task.done">{{task.name}}</mat-card-title>    
+    </mat-card-header>
+    <mat-card-actions *ngIf="!task.done">
+      <button mat-button (click)="toDoneTask(task)">TO DONE</button>
+    </mat-card-actions>
+  </mat-card> 
+
+</ng-container> -->
+<div>    
+  <button mat-raised-button (click)="allTaskToDone()" *ngIf="verifyDoneTasks()"> ALL TASK TO DONE </button> 
+</div>
+<mat-selection-list>
+  <!-- <mat-list-option *ngFor="let task of taskList" [selected]="task.done" (click)="task.done = !task.done">
+    <span [class.done]="task.done">{{task.name}}</span>
+  </mat-list-option> -->
+  <app-task-item *ngFor="let task of taskList" [inputTask]="task" (onDone)="task.done = !task.done"></app-task-item>
+</mat-selection-list>

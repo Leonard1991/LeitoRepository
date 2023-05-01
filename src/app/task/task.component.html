@@ -1,0 +1,41 @@
+
+<div mat-dialog-title>
+    <h1>Task Form</h1>
+</div>
+<form [formGroup]="taskForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">    
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Name Task</mat-label>
+                <input matInput type="text" placeholder="Name Task" formControlName="name">
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline">
+                <mat-label>State</mat-label>
+                <mat-select [(value)]="selected" formControlName="state">
+                <mat-option *ngFor="let state of states" [value]="state" >
+                    {{state}}
+                </mat-option>
+                <!-- <mat-option value="todo">To Do</mat-option>
+                <mat-option value="doing">Doing</mat-option>
+                <mat-option value="done">Done</mat-option> -->
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-radio-group aria-label="Select an option" formControlName="priority">
+                <mat-label><b>Priority</b></mat-label>
+                <mat-radio-button value="high">High</mat-radio-button>
+                <mat-radio-button value="medium">Medium</mat-radio-button>
+                <mat-radio-button value="low">Low</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="row">
+            
+        </div>         
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Modify': 'Add'}}</button>
+    </div>
+</form>
