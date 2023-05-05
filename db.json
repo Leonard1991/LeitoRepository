@@ -1,0 +1,42 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "tasks": [
+    {
+      "name": "Example Task",
+      "state": "ToDo",
+      "priority": "medium",
+      "date": "21-04-2023 11:47:59",
+      "id": 2
+    },
+    {
+      "name": "Example Task Done",
+      "state": "Done",
+      "priority": "low",
+      "date": "21-04-2023 12:14:35",
+      "id": 3
+    },
+    {
+      "name": "Example Task 3",
+      "state": "ToDo",
+      "priority": "high",
+      "date": "21-04-2023 08:05:16",
+      "id": 4
+    }
+  ]
+}
